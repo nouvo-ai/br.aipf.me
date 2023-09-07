@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배스킨라빈스 AI사진관</title>
+    <style>
+        /* 폰트를 @font-face로 정의 */
+        @font-face {
+            font-family: 'BMJUA';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #FFD0E1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            height: 100vh;
+            font-family: 'BMJUA', sans-serif; /* 새로 추가된 폰트를 적용 */
+        }
+
+        .header {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .logo {
+            max-width: 100%;
+        }
+        .title_img {
+            max-width: 20%;
+        }
+
+        .main-image {
+            max-width: 20%;
+        }
+
+        .text {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+
+        .center-content {
+            text-align: center;
+        }
+
+        .start-button {
+            background-color: #A78FC3;
+            color: white;
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .start-button .top-text {
+            font-size: 24px; /* 위쪽 텍스트의 폰트 크기를 크게 설정 */
+        }
+
+        @media (max-width: 768px) {
+            /* 모바일 화면 스타일 */
+            .header {
+                margin-top: 10px;
+            }
+
+            .title {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 class="title">
+            <span class="top-text">사진 업로드</span>
+        </h1>
+        <span class="bottom-text">셀카를 한장 선택해주세요</span>
+    </div>
+    <div class="center-content">
+        <img style="max-width: 50%;" src="center-image.png" alt="Center Image">
+        <div class="checkbox-group">
+            <div class="checkbox-item">
+                <input type="checkbox" name="checkbox-choice" id="checkbox-1">
+                <label for="checkbox-1">만 14세 이상입니다 <a href="#" class="details-link">자세히</a></label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" name="checkbox-choice" id="checkbox-2">
+                <label for="checkbox-2">AI사진관 이용자 준수사항 동의 <a href="#" class="details-link">자세히</a></label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" name="checkbox-choice" id="checkbox-3">
+                <label for="checkbox-3">개인정보 수집 및 이용 동의 <a href="#" class="details-link">자세히</a></label>
+            </div>
+        </div>
+    </div>
+    <!-- 파일 업로드 입력란 추가 -->
+    <input type="file" id="image-upload" accept="image/*" style="display: none;">
+    <label for="image-upload" class="start-button" style="visibility: hidden;">사진 업로드 하기</label>
+    <!-- 이미지 미리보기를 위한 이미지 요소 -->
+    <img id="selected-image" src="#" alt="선택된 이미지" style="display: none; max-width: 100%;">
+
+    <script>
+        // 파일 업로드 입력란의 변경 이벤트 리스너 추가
+        document.getElementById('image-upload').addEventListener('change', function (e) {
+            const selectedImage = e.target.files[0];
+            const selectedImageElement = document.getElementById('selected-image');
+
+            if (selectedImage) {
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    selectedImageElement.src = e.target.result;
+                };
+
+                reader.readAsDataURL(selectedImage);
+                alert("이미지 선택 완료되었습니다.");
+                window.location.href = 'loading.html';
+            }
+        });
+
+        const uploadButton = document.querySelector('.start-button')
+        function updateButtonVisibility() {
+            const checkedCheckboxes = document.querySelectorAll('input[name="checkbox-choice"]:checked');
+            if (checkedCheckboxes.length === 3) {
+                uploadButton.style.visibility = 'visible'; // 모두 체크되었을 때 버튼 활성화
+            } else {
+                uploadButton.style.visibility = 'hidden'; // 체크되지 않았을 때 버튼 비활성화
+            }
+        }
+        const checkbox1 = document.getElementById('checkbox-1');
+        const checkbox2 = document.getElementById('checkbox-2');
+        const checkbox3 = document.getElementById('checkbox-3');
+        checkbox1.addEventListener('change', updateButtonVisibility);
+        checkbox2.addEventListener('change', updateButtonVisibility);
+        checkbox3.addEventListener('change', updateButtonVisibility);
+    </script>
+</body>
+</html>

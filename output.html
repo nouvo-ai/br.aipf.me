@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배스킨라빈스 AI사진관</title>
+    <style>
+        /* 폰트를 @font-face로 정의 */
+        @font-face {
+            font-family: 'BMJUA';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #FFD0E1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            height: 100vh;
+            font-family: 'BMJUA', sans-serif; /* 새로 추가된 폰트를 적용 */
+        }
+
+        .header {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .logo {
+            max-width: 100%;
+        }
+        .title_img {
+            max-width: 20%;
+        }
+
+        .main-image {
+            max-width: 20%;
+        }
+
+        .text {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+
+        .center-content {
+            text-align: center;
+        }
+
+        .start-button {
+            background-color: #A78FC3;
+            color: white;
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .start-button .top-text {
+            font-size: 24px; /* 위쪽 텍스트의 폰트 크기를 크게 설정 */
+        }
+
+        /* 모바일 화면 박살남 수정 필요 */
+        @media (max-width: 768px) {
+            /* 모바일 화면 스타일 */
+            .header {
+                margin-top: 10px;
+            }
+
+            .title {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 class="title">
+            <span class="top-text">생성 완료</span>
+        </h1>
+        <span class="bottom-text">어때요 사진이 잘 나왔나요?</span>
+    </div>
+    <div class="center-content">
+        <img style="max-width: 50%;" src="sample.png" alt="Center Image">
+    </div>
+    <!-- SNS 모달과 함께 친구에게 공유하기 미구현 -->
+    <img id="image-3" style="max-width: 25%;" src="Group 3.png">
+    <!-- 아래 부분 해시태그는 이전 파라미터에 따라 다르게 나타나도록 -->
+    <span class="top-text">#이게뭐야_나안닮음 #레인보우샤베트 #상큼상큼</span>
+    <!-- 배민이동 미구현 -->
+    <img id="image-4" style="max-width: 25%;" src="Group 4.png">
+    <div style="text-align: center;">
+        <!-- 버튼별 이동 미구현 -->
+        <img id="image-5" style="max-width: 23.5%;" src="Group 5.png">
+        <img id="image-6" style="max-width: 23.5%;" src="Group 6.png">
+    </div>
+
+    <script>
+        // Group 3.png 클릭 시 현재 링크를 클립보드에 복사하고 알림을 띄웁니다.
+        document.getElementById('image-3').addEventListener('click', function () {
+            const currentURL = window.location.href;
+            const dummyTextArea = document.createElement('textarea');
+            dummyTextArea.value = currentURL;
+            document.body.appendChild(dummyTextArea);
+            dummyTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(dummyTextArea);
+            alert('현재 링크가 클립보드에 복사되었습니다:\n' + currentURL);
+        });
+
+        // Group 4.png 클릭 시 배민으로 이동하는 알림을 띄웁니다.
+        document.getElementById('image-4').addEventListener('click', function () {
+            alert('배민으로 이동합니다.');
+        });
+
+        // Group 5.png와 Group 6.png 클릭 시 select.html로 이동합니다.
+        document.getElementById('image-5').addEventListener('click', function () {
+            window.location.href = 'select.html';
+        });
+
+        document.getElementById('image-6').addEventListener('click', function () {
+            window.location.href = 'select.html';
+        });
+    </script>
+</body>
+</html>

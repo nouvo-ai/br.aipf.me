@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배스킨라빈스 AI사진관</title>
+    <style>
+        /* 폰트를 @font-face로 정의 */
+        @font-face {
+            font-family: 'BMJUA';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #FFD0E1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            height: 100vh;
+            font-family: 'BMJUA', sans-serif; /* 새로 추가된 폰트를 적용 */
+        }
+
+        .header {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .logo {
+            max-width: 100%;
+        }
+        .title_img {
+            max-width: 20%;
+        }
+
+        .main-image {
+            max-width: 20%;
+        }
+
+        .text {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+
+        .center-content {
+            text-align: center;
+        }
+
+        .start-button {
+            background-color: #A78FC3;
+            color: white;
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .start-button .top-text {
+            font-size: 24px; /* 위쪽 텍스트의 폰트 크기를 크게 설정 */
+        }
+
+        @media (max-width: 768px) {
+            /* 모바일 화면 스타일 */
+            .header {
+                margin-top: 10px;
+            }
+
+            .title {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div style="visibility:hidden;"></div>
+    <div class="center-content">
+        <img style="max-width: 50%;" src="image 30.png" alt="Center Image">
+        <h1 class="title">
+            <span class="top-text">잠시만 기다려주세요</span><br>
+            <span class="top-text">열심히 만들고 있어요</span>
+        </h1>
+    </div>
+    <div style="visibility:hidden;"></div>
+
+    <script>
+        // 페이지가 로드될 때 실행할 함수를 지정합니다.
+        window.onload = function () {
+            // 3초 (3000 밀리초) 후에 다른 페이지로 이동합니다.
+            setTimeout(function () {
+                window.location.href = 'output.html'; // 이동할 페이지의 URL을 지정합니다.
+            }, 3000);
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배스킨라빈스 AI사진관</title>
+    <style>
+        /* 폰트를 @font-face로 정의 */
+        @font-face {
+            font-family: 'BMJUA';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #FFD0E1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            height: 100vh;
+            font-family: 'BMJUA', sans-serif; /* 새로 추가된 폰트를 적용 */
+        }
+
+        .header {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .logo {
+            max-width: 100%;
+        }
+        .title_img {
+            max-width: 20%;
+        }
+
+        .main-image {
+            max-width: 20%;
+        }
+
+        .start-button {
+            background-color: #A78FC3;
+            color: white;
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .start-button .top-text {
+            font-size: 24px; /* 위쪽 텍스트의 폰트 크기를 크게 설정 */
+        }
+
+        @media (max-width: 768px) {
+            /* 모바일 화면 스타일 */
+            .header {
+                margin-top: 10px;
+            }
+
+            .title {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img class="logo" src="logo.png" alt="로고 이미지">
+    </div>
+    <img class="title_img" src="title_img.png" alt="제목 이미지">
+    <img class="main-image" src="main-image.png" alt="메인 이미지">
+    <label class="start-button" onclick="location.href='select.html'">
+        <div class="top-text">시작하기</div>
+        <div class="bottom-text">지금까지 602,301 명이 참여했어요</div>
+    </label>
+</body>
+</html>
