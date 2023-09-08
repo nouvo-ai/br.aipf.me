@@ -1,4 +1,4 @@
-const AWS = require('aws-sdk');
+const AWS = require('@aws-sdk/*');
 
 exports.handler = async (event, context) => {
     const { ACCESS_KEY_ID } = process.env;
