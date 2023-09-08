@@ -5,5 +5,5 @@
   package = "netlify-plugin-inline-functions-env"
 
 [plugins.inputs]
-  include = "netlify/functions"
+  include = "netlify/functions/**/*"
   exclude = []
