@@ -8,5 +8,7 @@
   include = "netlify/functions/**/*"
   exclude = []
 
-[functions]
-  external_node_modules = ["aws-sdk"]
+[[plugins]]
+  package = "netlify-plugin-package"
+  [plugins.inputs.package]
+    include = ["aws-sdk"]
