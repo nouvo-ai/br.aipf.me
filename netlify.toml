@@ -1,3 +1,6 @@
+[build]
+  install = "npm install aws-sdk"
+
 [[plugins]]
   package = "netlify-plugin-inline-functions-env"
 
@@ -9,6 +12,3 @@
   package = "netlify-plugin-package"
   [plugins.inputs.package]
     include = ["aws-sdk"]
-
-[functions]
-  external_node_modules = ["aws-sdk"]
