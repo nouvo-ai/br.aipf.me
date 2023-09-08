@@ -1,5 +1,5 @@
 [[plugins]]
-  package = ["netlify-plugin-inline-functions-env", "netlify-plugin-package"]
+  package = "netlify-plugin-inline-functions-env"
   [plugins.inputs.package]
     include = ["aws-sdk"]
 
