@@ -4,5 +4,6 @@
 [[plugins]]
   package = "netlify-plugin-inline-functions-env"
 
-  [plugins.inputs]
-    functionPath = "netlify/functions"
+[plugins.inputs]
+  include = "netlify/functions"
+  exclude = []
