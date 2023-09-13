@@ -86,7 +86,7 @@
         <span class="bottom-text">어때요 사진이 잘 나왔나요?</span>
     </div>
     <div class="center-content">
-        <img style="max-width: 50%;" src="sample.png" alt="Center Image">
+        <img style="max-width: 50%;" id="s3-input" alt="Center Image">
     </div>
     <!-- SNS 모달과 함께 친구에게 공유하기 미구현 -->
     <img id="image-3" style="max-width: 25%;" src="Group 3.png">
@@ -101,6 +101,14 @@
     </div>
 
     <script>
+        // s3 이미지 할당
+        var queryString = window.location.search;
+        var urlParams = new URLSearchParams(queryString);
+        var s3_url = urlParams.get('s3_url');
+        var imageElement = document.getElementById('s3-input');
+        imageElement.src = s3_url;
+
+
         // Group 3.png 클릭 시 현재 링크를 클립보드에 복사하고 알림을 띄웁니다.
         document.getElementById('image-3').addEventListener('click', function () {
             const currentURL = window.location.href;

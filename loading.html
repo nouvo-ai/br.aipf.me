@@ -93,7 +93,12 @@
         window.onload = function () {
             // 3초 (3000 밀리초) 후에 다른 페이지로 이동합니다.
             setTimeout(function () {
-                window.location.href = 'output.html'; // 이동할 페이지의 URL을 지정합니다.
+                // URL에서 값을 받아옵니다.
+                var queryString = window.location.search;
+                var urlParams = new URLSearchParams(queryString);
+                var s3_url = urlParams.get('s3_url');
+                var redirectTo = '/output.html?s3_url=' + encodeURIComponent(s3_url);
+                window.location.href = redirectTo;
             }, 3000);
         };
     </script>
