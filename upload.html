@@ -125,7 +125,7 @@
                     const data = await response.json();
                     alert(data.message);
 
-                    var redirectTo = '/loading.html?s3_url=' + encodeURIComponent(s3_url);
+                    var redirectTo = '/loading.html?s3_url=' + data.s3_url
                     window.location.href = redirectTo;
                 } else {
                     alert("업로드에 실패했습니다.");
